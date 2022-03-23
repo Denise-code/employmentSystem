@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>EmploymentSystem</title>
+		<link rel="preload" href="/css/normalize.css" as="style">
+		<link href="/css/normalize.css" rel="stylesheet">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+	
+		<link rel="preload" href="/css/stylesOfIndex.css" as="style">
+		<link href="/css/stylesOfIndex.css" rel="stylesheet">
+	</head>
+	<body>
+	
+		<header>
+	        <h1 class="title">Employment System</h1>
+	    </header> 
+	    
+	    <div class="nav-bg">
+	    	<nav class="nav-master content">
+	    		<a class="nav-link" th:href="@{/employment}">Home</a>
+	    		<a class="nav-link active" th:href="@{/viewAddEmployee}" aria-current="page" >AddEmployment</a>
+	    		<a class="nav-link"  th:href="@{/searchEmployee}">SearchEmployment</a>
+	    		
+	    	</nav>
+	    
+	    </div>
+	    <section class="hero">
+	    
+	    	<div class="content-hero">
+	    		<h2 class="title">Employment System with theirs compensations</h2>
+		        <div class="location">
+		            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="88" height="88" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+		                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		                <circle cx="12" cy="11" r="3" />
+		                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+		            </svg>
+		        
+		        <p>Guadalajara, Jalisco</p>
+				</div>
+	    	</div>
+	        
+	    </section>
+	    
+	   <main class="content shadow">
+	
+			<div class="behaviours">
+				<section class="behaviour">
+				
+	
+					<div class="icons">
+						<a  th:href="@{/employment}">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<polyline points="5 12 3 12 12 3 21 12 19 12" />
+							<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+							<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+						</svg>
+						</a>
+					</div>
+				</section>
+				<section class="behaviour">
+					
+					
+					<div class="icons">
+						<a th:href="@{/viewAddEmployee}" >
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<circle cx="9" cy="7" r="4" />
+							<path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+							<path d="M16 11h6m-3 -3v6" />
+						</svg>
+						</a>
+					</div>
+				</section>
+				
+				<section class="behaviour">
+				
+					
+					<div class="icons">
+						<a th:href="@{/searchEmployee}">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<circle cx="12" cy="7" r="4" />
+							<path d="M6 21v-2a4 4 0 0 1 4 -4h1" />
+							<circle cx="16.5" cy="17.5" r="2.5" />
+							<path d="M18.5 19.5l2.5 2.5" />
+						</svg>
+						</a>
+					</div>
+				</section>
+			</div>
+	    </main>
+	    
+		
+		 <footer class="footer">
+	        <p>By IBM </p>
+	    </footer>
+	</body>
+</html>

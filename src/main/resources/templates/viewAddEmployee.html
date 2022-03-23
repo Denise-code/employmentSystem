@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>EmploymentSystem</title>
+		<link rel="preload" href="/css/normalize.css" as="style">
+		<link href="/css/normalize.css" rel="stylesheet">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+		<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+	
+	
+		<link rel="preload" href="/css/stylesOfViewAddEmployees.css" as="style">
+		<link href="/css/stylesOfViewAddEmployees.css" rel="stylesheet">
+	</head>
+	<body>
+		<div>
+	        <h1 class="title">Employment System</h1>
+	    </div> 
+	    
+	    <div class="nav-bg">
+	    	<nav class="nav-master content">
+	    		<a class="nav-link" th:href="@{/employment}">Home</a>
+	    		<a class="nav-link active" th:href="@{/viewAddEmployee}" aria-current="page" >AddEmployment</a>
+	    		<a class="nav-link"  th:href="@{/searchEmployee}">SearchEmployment</a>
+	    		
+	    	</nav>
+	    
+	    </div>
+	
+		<header>
+			<!-- MESSAGESs -->
+			<div class="alert alert-success alert-dismissable" th:if="${success != null}">
+				<label th:text="${success}" class="h2"></label>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			
+			<div class="alert alert-danger alert-dismissable" th:if="${error != null}">
+				<label th:text="${error}" class="h2"></label>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</header>
+		
+		<main class="content shadow">
+			<section >
+				<div class="align-center flex">
+					<a th:href="@{/new}" class="button w-100">Add Employee</a>
+				</div>
+			</section>
+	
+			<div class="service">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>idEmployee</th>
+							<th>firstName</th>
+							<th>middleName</th>
+							<th>lastName</th>
+							<th>birthDate</th>
+							<th>position</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="employee:${employees}">
+							<td th:text="${employee.idEmployee}"></td>
+							<td th:text="${employee.firstName}"></td>
+							<td th:text="${employee.middleName}"></td>
+							<td th:text="${employee.lastName}"></td>
+							<td th:text="${employee.birthDate}"></td>
+							<td th:text="${employee.position}"></td>
+							<td>
+								<a th:href="@{/edit/}+${employee.idEmployee}" class="button w-100 warning mt">Edit</a>
+								<a th:onclick="deleted([[${employee.idEmployee}]])" class="button w-100 danger mt">Delete</a>
+							</td>
+						</tr>
+					</tbody>
+					
+				</table>
+			</div>
+	
+		</main>
+		
+		
+		<footer class="footer">
+	        <p>By IBM </p>
+	    </footer>
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="/js/deleteEmployee.js"></script>
+	</body>
+</html>
